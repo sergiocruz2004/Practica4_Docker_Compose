@@ -10,6 +10,8 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: password123
     ports:
       - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
     networks:
       - app_network
 
@@ -46,6 +48,9 @@ services:
       - backend
     networks:
       - app_network
+
+volumes:
+  mongo_data:
 
 networks:
   app_network:
